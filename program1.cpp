@@ -7,33 +7,35 @@
 
 
 #include <iostream>
-#include program1.h
+#include "program1.h"
+
 
 using namespace std;
 
-struct truefalse(void){
+struct truefalse_ {
     char question[400];
     int correct;
-}
+};
 
-struct multiplechoice {
+struct multiplechoice_  {
     char question[400];
     char resp[4][400];
     int correct;
-}
+};
 
-struct shortanswer {
+struct shortanswer_  {
     char question[400];
     char resp[400];
     char correct[400];
-}
+};
 
 
 int main () {
     intro();
-    while (True){
-    int i = selectype()
+    while (true){
+    int i = selecttype();
 
+    jump_table[i-1]();
     }
     return 0;
 
