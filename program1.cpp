@@ -12,22 +12,6 @@
 
 using namespace std;
 
-struct truefalse_ {
-    char question[400];
-    int correct;
-};
-
-struct multiplechoice_  {
-    char question[400];
-    char resp[4][400];
-    int correct;
-};
-
-struct shortanswer_  {
-    char question[400];
-    char resp[400];
-    char correct[400];
-};
 
 
 int main () {
