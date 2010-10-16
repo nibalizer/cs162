@@ -45,25 +45,32 @@ Handler jump_table[3] =
 
 
 void truefalse(void){
-    truefalse_ item;
-    cout << "Please enter a true or false question" << endl;
-    cout << "Type: ";
-   // cin.get(item.question, 400, '\n');
-   //cin.get();
-   // while (cin.get() != '\n');
-    //item.question = "What are eyes?";
-    getline(cin, item.question);
-    cout << "Please tell us the correct response. Enter 1 for True and 0 for false." << endl;
-    cout << "Type: ";
-    //cin >> item.correct;
-    cout << "Are the following correct?" << endl;
-    cout << "Question: " << item.question << endl;
-    if (item.correct) 
-        cout << "Answer: True" << endl;
-    else
-        cout << "Answer: False" << endl;
-    cout << "Type: "; 
-    cout << "Hi" << endl;
+    string again = "no";
+    while (again != "yes"){
+         //truefalse_ item;
+        string lasers;
+        string maser;
+        cout << "Please enter a true or false question" << endl;
+        cout << "Type: ";
+       // cin.get(item.question, 400, '\n');
+       //cin.get();
+       // while (cin.get() != '\n');
+        //item.question = "What are eyes?";
+        getline (cin, lasers);
+        //cin.get();
+        cout << "Please tell us the correct response. Enter 1 for True and 0 for false." << endl;
+        cout << "Type: ";
+        getline (cin, maser);
+        cout << "Are the following correct?" << endl;
+        cout << "Question: " << lasers<< endl;
+        if (maser == "1") 
+            cout << "Answer: True" << endl;
+        else
+            cout << "Answer: False" << endl;
+        cout << "Type: "; 
+        getline (cin, again);
+    //cout << "Hi" << endl;
+    }
 }
 void multiplechoice(void){
     cout << "Please enter a multliple choice question" << endl;
@@ -85,7 +92,7 @@ int selecttype(){
     for (int z = 0; z <= 5; z++) {
 
         cout << "Type: ";
-        cin >> i;
+        i = cin.get();
         if (i == 1)
             break;
         if (i == 2)

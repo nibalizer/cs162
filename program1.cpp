@@ -18,7 +18,6 @@ int main () {
     intro();
     while (true){
     int i = selecttype();
-
     jump_table[i-1]();
     }
     return 0;
