@@ -89,10 +89,10 @@ int selecttype(){
     cout << "2. 4 response multiple choice" << endl;
     cout << "3.. Short answer" << endl;
     cout << "At the prompt below, please enter the number corresponding to desired type." << endl;
-    for (int z = 0; z <= 5; z++) {
+    while (true) {
 
         cout << "Type: ";
-        i = cin.get();
+        cin >> i;
         if (i == 1)
             break;
         if (i == 2)
