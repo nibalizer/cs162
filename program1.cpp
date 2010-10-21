@@ -15,7 +15,7 @@ using namespace std;
 
 struct truefalse_ {
     char question[400];
-    int correct;
+    char resp[30];
 };
 
 struct multiplechoice_  {
@@ -27,8 +27,8 @@ struct multiplechoice_  {
 struct shortanswer_  {
     char question[400];
     char resp[400];
-    char correct[400];
 };
+
 typedef void (*Handler)(void);
 Handler jump_table[3] =
     {truefalse,
@@ -48,30 +48,27 @@ int main () {
 
 
 void truefalse(void){
-    string again = "no";
+    char again[30];
+    truefalse_ question;
     while (again != "yes"){
-         //truefalse_ item;
-        string lasers;
-        string maser;
         cout << "Please enter a true or false question" << endl;
-        cout << "Type: ";
-       // cin.get(item.question, 400, '\n');
-       //cin.get();
-       // while (cin.get() != '\n');
-        //item.question = "What are eyes?";
-        getline (cin, lasers);
+        cout << "Type: " << endl;
+        cin.get(question.question, 400);
+        cin.ignore();
         //cin.get();
         cout << "Please tell us the correct response. Enter 1 for True and 0 for false." << endl;
         cout << "Type: ";
-        getline (cin, maser);
+        cin.get(question.resp, 30);
+        cin.ignore();
         cout << "Are the following correct?" << endl;
         cout << "Question: " << lasers<< endl;
-        if (maser == "1") 
+        if ((question.resp == "True") || (question.resp == "true"))
             cout << "Answer: True" << endl;
         else
             cout << "Answer: False" << endl;
         cout << "Type: "; 
-        getline (cin, again);
+        cin.get(again, 30);
+        cin.ignore();
     //cout << "Hi" << endl;
     }
 }
@@ -90,12 +87,13 @@ int selecttype(){
     cout << "This program can produce three types of questions.\n";
     cout << "1. True or False" << endl;
     cout << "2. 4 response multiple choice" << endl;
-    cout << "3.. Short answer" << endl;
+    cout << "3. Short answer" << endl;
     cout << "At the prompt below, please enter the number corresponding to desired type." << endl;
     while (true) {
 
         cout << "Type: ";
         cin >> i;
+        cin.ignore(100, '\n');
         if (i == 1)
             break;
         if (i == 2)
