@@ -20,7 +20,10 @@ struct truefalse_ {
 
 struct multiplechoice_  {
     char question[400];
-    char resp[4][400];
+    char resp1[400];
+    char resp2[400];
+    char resp3[400];
+    char resp4[400];
     int correct;
 };
 
@@ -48,35 +51,79 @@ int main () {
 
 
 void truefalse(void){
-    char again[30];
+    char again;
     truefalse_ question;
-    while (again != "yes"){
+    while (again != 'y'){
         cout << "Please enter a true or false question" << endl;
-        cout << "Type: " << endl;
+        cout << "Type: ";
         cin.get(question.question, 400);
         cin.ignore();
-        //cin.get();
-        cout << "Please tell us the correct response. Enter 1 for True and 0 for false." << endl;
+        cout << "Please tell us the correct response." << endl;
         cout << "Type: ";
         cin.get(question.resp, 30);
         cin.ignore();
         cout << "Are the following correct?" << endl;
-        cout << "Question: " << lasers<< endl;
-        if ((question.resp == "True") || (question.resp == "true"))
-            cout << "Answer: True" << endl;
-        else
-            cout << "Answer: False" << endl;
-        cout << "Type: "; 
-        cin.get(again, 30);
+        cout << "Question: " << question.question << endl;
+        cout << "Answer: " << question.resp << endl;
+        cout << "Type(y/n): "; 
+        cin >> again;
         cin.ignore();
-    //cout << "Hi" << endl;
     }
 }
 void multiplechoice(void){
-    cout << "Please enter a multliple choice question" << endl;
+    char again;
+    multiplechoice_ question;
+    while (again != 'y'){
+        cout << "Please enter a 4 response multliple choice question" << endl;
+        cout << "Type: ";
+        cin.get(question.question, 400);
+        cin.ignore();
+        cout << "Please tell us response #1." << endl;
+        cout << "Type: ";
+        cin.get(question.resp1, 400);
+        cin.ignore();
+        cout << "Please tell us response #2." << endl;
+        cout << "Type: ";
+        cin.get(question.resp2, 400);
+        cin.ignore();
+        cout << "Please tell us response #3." << endl;
+        cout << "Type: ";
+        cin.get(question.resp3, 400);
+        cin.ignore();
+        cout << "Please tell us response #4." << endl;
+        cout << "Type: ";
+        cin.get(question.resp4, 400);
+        cin.ignore();
+        cout << "Are the following correct?" << endl;
+        cout << "Question: " << question.question << endl;
+        cout << "Answer: " << question.resp1 << endl;
+        cout << "Answer: " << question.resp2 << endl;
+        cout << "Answer: " << question.resp3 << endl;
+        cout << "Answer: " << question.resp4 << endl;
+        cout << "Type(y/n): "; 
+        cin >> again;
+        cin.ignore();
+    }
 }
 void shortanswer(void){
-    cout << "Please enter a short answer question" << endl;
+    char again;
+    shortanswer_ question;
+    while (again != 'y'){
+        cout << "Please enter a short answer question" << endl;
+        cout << "Type: ";
+        cin.get(question.question, 400);
+        cin.ignore();
+        cout << "Please tell us the correct response." << endl;
+        cout << "Type: ";
+        cin.get(question.resp, 30);
+        cin.ignore();
+        cout << "Are the following correct?" << endl;
+        cout << "Question: " << question.question << endl;
+        cout << "Answer: " << question.resp << endl;
+        cout << "Type(y/n): "; 
+        cin >> again;
+        cin.ignore();
+    }
    }
 
 
