@@ -1,8 +1,12 @@
-main: program1
+main: program2 
 
 program1:
 	g++ -g program1.cpp -o program1
 
-clean:
-	rm program1
+program2:
+	g++ -g program2.cpp -0 program2
 
+clean:
+	rm program1 program2
+
+all: program1 program2
