@@ -13,40 +13,12 @@
 using namespace std;
 
 
-
-typedef void (*Handler)(void);
-Handler jump_table[3] =
-    {truefalse,
-    multiplechoice,
-    shortanswer};
-
-struct product_db {
-    char[60] shortname;
-    char[500] url;
-    float price;
-    char[80] criteron1;
-    char[80] criteron2;
-    char[80] criteron3;
-}
-
-struct baseline_info {
-    char[80] productname;
-    char[80] criteron1;
-    char[80] criteron2;
-    char[80] criteron3;
-    int weight1;
-    int weight2;
-    int weight3;
-    float maxprice;
-    int numfields;
-}
-
 int main () {
     magickarlafreecode();
     intro();
     baseline_info info;
     baseline(info);
-    product_db product[2*info.numfields];
+    product_db product[(2*info.numfields)];
     for (int i = 0; i <= 2*info.numfields; i++){
         addproduct(product, i);
         displayitem(product[i]);
@@ -71,7 +43,7 @@ void addproduct(product_db product[], int i){
     cout << "This concludes questioning about producd #" << (i+1) << endl;
 }
 
-void dislayitem (product) {
+void displayitem (product_db product) {
     cout << "Name: " << product.shortname << endl;
     cout << "URL or store: " << product.url << endl;
     cout << "Name: " << product.price << endl;
@@ -82,8 +54,8 @@ void dislayitem (product) {
 }
 
 void io (char field[]) {
-    size = (sizeof(field)/sizeof(char));
-    cin.get(field[], size);
+    int size = sizeof(field);
+    cin.get(field, size);
     cin.ignore();
 }
 

@@ -8,7 +8,27 @@
 // Algorithim
 // I. The program states its name and function.
 // II.
- 
+
+struct product_db {
+    char shortname[60];
+    char url[500];
+    float price;
+    char criterion1[80];
+    char criterion2[80];
+    char criterion3[80];
+};
+
+struct baseline_info {
+    char productname[80];
+    char criterion1[80];
+    char criterion2[80];
+    char criterion3[80];
+    int weight1;
+    int weight2;
+    int weight3;
+    float maxprice;
+    int numfields;
+};
 
 void intro();
 int selecttype();
