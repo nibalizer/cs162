@@ -18,9 +18,15 @@ int main () {
     intro();
     baseline_info info;
     baseline(info);
-    product_db product[(2*info.numfields)];
-    for (int i = 0; i <= 2*info.numfields; i++){
+//    cout << info.numfields;
+    product_db product[info.numfields];
+    //addproduct(product, 0);
+    //displayitem(product, 0);
+    for (int i = 0; i <= info.numfields; i++){
         addproduct(product, i);
+        displayitem(product[i]);
+    }
+    for (int i = 0; i <= info.numfields; i++){
         displayitem(product[i]);
     }
 }
@@ -56,7 +62,7 @@ void displayitem (product_db product) {
 void io (char field[]) {
     int size = sizeof(field);
     cin.get(field, size);
-    cin.ignore();
+    cin.ignore(size, '\n');
 }
 
 void baseline(baseline_info& info){
@@ -80,7 +86,8 @@ void baseline(baseline_info& info){
     cout << "What is the maximum price you are willing to pay for your product?" << endl;
     cin >> info.maxprice;
     cin.ignore();
-    cout << "How many items do you expect to get data for? Note: entering more tthan twice this many items may break things." << endl;
+    cout << "How many items do you expect to get data for? " << endl;
+    cin >> info.numfields;
     cin.ignore();
 }
 
