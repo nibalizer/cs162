@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include "program2.h"
 
 
@@ -18,18 +19,19 @@ int main () {
     intro();
     baseline_info info;
     baseline(info);
-//    cout << info.numfields;
     product_db product[info.numfields];
-    //addproduct(product, 0);
-    //displayitem(product, 0);
-    for (int i = 0; i <= info.numfields; i++){
+    for (int i = 0; i <= (info.numfields - 1); i++){
         addproduct(product, i);
         displayitem(product[i]);
+        writeproduct(product[i]);
     }
-    for (int i = 0; i <= info.numfields; i++){
-        displayitem(product[i]);
-    }
+    displayfromfile();
+//    for (int i = 0; i <= info.numfields; i++){
+//        displayitem(product[i]);
+//    }
 }
+
+
 
 void addproduct(product_db product[], int i){
     cout << "The following questions conecern only product #" << (i+1) << endl;
@@ -57,6 +59,33 @@ void displayitem (product_db product) {
     cout << "Criterion 1: " << product.criterion1 << endl;
     cout << "Criterion 2: " << product.criterion2 << endl;
     cout << "Criterion 3: " << product.criterion3  << endl;
+}
+
+void displayfromfile(){
+    ifstream datafile;
+    datafile.open("datafile.txt");
+    char line[100];
+    if (datafile.is_open())
+    {
+        while ( datafile.good() )
+        {
+            datafile.getline (line, 100);
+            cout << line << endl;
+        }
+        datafile.close();
+    }
+    else cout << "Unable to open file, something went wrong";
+}
+void writeproduct (product_db product) {
+    ofstream datafile("datafile.txt", ios::app);
+    datafile << "Name: " << product.shortname << endl;
+    datafile << "URL or store: " << product.url << endl;
+    datafile << "Name: " << product.price << endl;
+    datafile << "Price: " << product.price << endl;
+    datafile << "Criterion 1: " << product.criterion1 << endl;
+    datafile << "Criterion 2: " << product.criterion2 << endl;
+    datafile << "Criterion 3: " << product.criterion3  << endl;
+    datafile.close();
 }
 
 void io (char field[]) {
