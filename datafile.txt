@@ -1,0 +1,14 @@
+Name: 2
+URL or store: 2
+Name: 2
+Price: 2
+Criterion 1: 2
+Criterion 2: 2
+Criterion 3: 2
+Name: 2
+URL or store: 2
+Name: 2
+Price: 2
+Criterion 1: 2
+Criterion 2: 2
+Criterion 3: 2

@@ -30,10 +30,13 @@ struct baseline_info {
     int numfields;
 };
 
+
 void intro();
 int selecttype();
 void magickarlafreecode();
 void baseline(baseline_info&);
 void io (char field[]);
 void addproduct(product_db product[], int i);
+void writeproduct(product_db product);
 void displayitem(product_db product);
+void displayfromfile();
