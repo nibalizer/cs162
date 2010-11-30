@@ -39,7 +39,13 @@ int file::displayfile(){
 }
 
 int file::comparefilename(char name[]){
-    if (name == filename)
+    int same = 1; 
+    for (int i = 0; i < 20; i++){
+        if (name[i] != filename[i]){
+            same = 0;
+        }
+    }
+    if (same)
         return 1;
     else
         return 0;

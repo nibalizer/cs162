@@ -10,6 +10,6 @@ program3:
 	g++ -g program3.cpp -o program3
 
 clean:
-	rm program1 program2
+	rm program1 program2 program3
 
-all: program1 program2
+all: program1 program2 program3

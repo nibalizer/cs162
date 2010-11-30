@@ -7,7 +7,10 @@
 
 class index {
     public:
-        index(int size=100);
+        index();
+        void find(char name[]);
+        void display();
+        int extend(file& addedfile); 
 
     private:
         file * my_index;

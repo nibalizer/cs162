@@ -10,5 +10,5 @@
 // II.
 
 
-
+void userinterface(index& awesome_index);
 void intro();
