@@ -1,0 +1,25 @@
+// Spencer Krum
+// CS162
+// Karla Fant
+// Program 4/5
+// DBAD License
+// Nov 29, 2010
+
+Algorithim.
+
+There will be a linked list of pages, and each page will contain an offshooting list of entries
+
+0--->[+-+-+-+]-->[+-+-+-+]-->...
+        |           |   
+        |           |   
+        V           V   
+     [+=+=+]     [+=+=+]
+        |           |   
+        |           |   
+        V           V   
+     [+=+=+]     [+=+=+]
+        |           |   
+        |           |   
+        V           V   
+
+

@@ -10,5 +10,6 @@
 // II.
 
 
+void searchdb(index& awesome_index);
 void userinterface(index& awesome_index);
 void intro();

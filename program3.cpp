@@ -37,7 +37,7 @@ int main () {
 
 void userinterface(index& awesome_index){
     int selection = -1;
-    while(true){
+    //while(true){
         cout << "Please pick one of the 4 options below" << endl;
         cout << "1 - Print out whole database" << endl;
         cout << "2 - Add a file to database" << endl;
@@ -56,11 +56,7 @@ void userinterface(index& awesome_index){
                 break;
                     }
             case 3: {
-                char filename[20];
-                cout << "File name: "; 
-                cin.get(filename, 20, '\n');
-                cin.ignore(20, '\n');
-                awesome_index.find(filename);
+                searchdb(awesome_index);
                 break;
                     }
             case 4:
@@ -68,8 +64,16 @@ void userinterface(index& awesome_index){
                 break;
             default :
                 cout << "Please enter 1, 2, 3, or 4." << endl;
-        }
+     //   }
     }
+}
+
+void searchdb(index& awesome_index){
+    char filename[20];
+    cout << "File name: " << endl; 
+    cin.get(filename, 20, '\n');
+    cin.ignore(20, '\n');
+    awesome_index.find(filename);
 }
 
 void intro(){

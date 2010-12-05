@@ -1,4 +1,4 @@
-main: program3 
+main: program4 
 
 program1:
 	g++ -g program1.cpp -o program1
@@ -8,6 +8,9 @@ program2:
 
 program3:
 	g++ -g program3.cpp -o program3
+
+program4:
+	g++ -g program4.cpp -o program4
 
 clean:
 	rm program1 program2 program3
