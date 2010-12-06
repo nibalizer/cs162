@@ -1,12 +1,14 @@
 // Spencer Krum
 // CS162
 // Karla Fant
-// Program 4/5
+// Program 4
 // DBAD License
 // Nov 29, 2010
 
 
 
-
-void userinterface(notebook& book);
+void help();
+void mainloop();
+void quit();
 void intro();
+

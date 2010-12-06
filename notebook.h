@@ -27,6 +27,7 @@ class notebook{
         void print();
         void print(int i);
         void find(char name[]);
+        void io(char field[]);
         void getentry(entry& newentry);
         void addentry();
         void addentry(entry& newentry, int pgnum);
